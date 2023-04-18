@@ -6,6 +6,9 @@ export const data = {
             return;
 
         if (message.content.startsWith('```') && message.content.endsWith('```')) {
+            if (message.content.length > 1000)
+                return;
+
             const content = message.content.substring(4, message.content.length - 3);
 
             await message.delete();
