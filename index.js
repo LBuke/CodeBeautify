@@ -9,8 +9,8 @@ const bot = new Client({
 
 // Load Event files from events folder
 const eventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'))
-(async () => {
-    for (const file of eventFiles) {
+for (const file of eventFiles) {
+    (async () => {
         console.log(`${file} loaded`)
         const event = await import(`./events/${file}`)
         if(event.data.once) {
@@ -18,8 +18,8 @@ const eventFiles = fs.readdirSync('./events/').filter(f => f.endsWith('.js'))
         } else {
             bot.on(event.data.name, (...args) => event.data.execute(...args, bot))
         }
-    }
-})()
+    })()
+}
 
 (async () => {
     await bot.login(config.token);
