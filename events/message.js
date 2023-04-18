@@ -11,7 +11,7 @@ export const data = {
             await message.delete();
 
             const code = encodeURIComponent(content);
-            const link = `https://kod.so/gen?code=${code}&watermark=cubecolony.net&background=blue&codeLineHeight=1&codeFontSize=12&borderRadius=16&tabSize=3&header=0`;
+            const link = `https://kod.so/gen?code=${code}&watermark=CodeBeautify&background=blue&codeLineHeight=1&codeFontSize=12&borderRadius=16&tabSize=3&header=0`;
 
             const exampleEmbed = { image: { url: link } };
             message.channel.send({ embeds: [exampleEmbed] });
